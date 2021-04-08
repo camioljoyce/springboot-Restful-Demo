@@ -1,5 +1,8 @@
 # 建立一個Restful API的專案
 
+[![hackmd-github-sync-badge](https://hackmd.io/iQp4KS1CTXWauL-EOdWXmg/badge)](https://hackmd.io/iQp4KS1CTXWauL-EOdWXmg)
+
+
 **首先按照之前做的這篇, 建立好基本的spring boot配置**
 - [建立一個SpringBoot + Spring + JPA 的Web專案](https://hackmd.io/i3T9xRyQR0OOVczCQmtkZQ)
 
