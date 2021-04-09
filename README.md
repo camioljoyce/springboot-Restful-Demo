@@ -2,6 +2,8 @@
 
 [![hackmd-github-sync-badge](https://hackmd.io/iQp4KS1CTXWauL-EOdWXmg/badge)](https://hackmd.io/iQp4KS1CTXWauL-EOdWXmg)
 
+- [GitHub位置](https://github.com/camioljoyce/springboot-Restful-Demo)
+
 
 **首先按照之前做的這篇, 建立好基本的spring boot配置**
 - [建立一個SpringBoot + Spring + JPA 的Web專案](https://hackmd.io/i3T9xRyQR0OOVczCQmtkZQ)
@@ -239,7 +241,7 @@ public class StudentController {
 	public ResponseVo updateStudent(@RequestParam("id") long id,@RequestParam("name") String name,@RequestParam("mathScore") int mathScore) {
 		ResponseVo result = new ResponseVo();
 		Student bean = service.findById(id);
-		if(bean!=null) {
+		if(bean!=null && bean.getId()>0) {
 			bean.setName(name);
 			bean.setMathScore(mathScore);
 			service.saveOrUpdate(bean);
@@ -256,7 +258,7 @@ public class StudentController {
 	public ResponseVo deleteStudent(@RequestParam("id") long id) {
 		ResponseVo result = new ResponseVo();
 		Student bean = service.findById(id);
-		if(bean!=null) {
+		if(bean!=null && bean.getId()>0) {
 			service.delete(id);
 			
 			result.setMessage("Delete Success!");
