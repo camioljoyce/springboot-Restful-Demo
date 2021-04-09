@@ -66,7 +66,7 @@ public class StudentController {
 	public ResponseVo updateStudent(@RequestParam("id") long id,@RequestParam("name") String name,@RequestParam("mathScore") int mathScore) {
 		ResponseVo result = new ResponseVo();
 		Student bean = service.findById(id);
-		if(bean!=null) {
+		if(bean!=null && bean.getId()>0) {
 			bean.setName(name);
 			bean.setMathScore(mathScore);
 			service.saveOrUpdate(bean);
@@ -83,7 +83,7 @@ public class StudentController {
 	public ResponseVo deleteStudent(@RequestParam("id") long id) {
 		ResponseVo result = new ResponseVo();
 		Student bean = service.findById(id);
-		if(bean!=null) {
+		if(bean!=null && bean.getId()>0) {
 			service.delete(id);
 			
 			result.setMessage("Delete Success!");
